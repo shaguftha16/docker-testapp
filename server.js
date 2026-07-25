@@ -11,12 +11,12 @@ const MONGO_URL = "mongodb://admin:qwerty@localhost:27017";
 const client = new MongoClient(MONGO_URL);
 
 //GET all users
-app.get("/getUsers", async (req, res) => {
-    await client.connect(URL);
+app.get("/getusers", async (req, res) => {
+    await client.connect( );
     console.log('Connected successfully to server');
 
     const db = client.db("apnacollege-db");
-    const data = await db.collection('users').find({}).toArray();
+    const data = await db.collection('user').find({}).toArray();
     
     client.close();
     res.send(data);
